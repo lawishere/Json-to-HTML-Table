@@ -1,0 +1,80 @@
+<html>
+<head>
+    <title>
+    </title>
+    <script type="text/javascript" src="object-to-html.js" ></script>
+    <script type="text/javascript">
+
+        var objectItem = {
+            "Totala": "34",
+            "Version": "1.0.4",
+            "Office": "New York",
+            "Object" : {
+                "Person": "Roger"
+            }
+        };
+
+        //Example data, Object
+        var objectArray = [{
+            "Totala": "34",
+            "Version": "1.0.4",
+            "Office": "New York"
+        }, {
+            "Totala": "67",
+            "Version": "1.1.0",
+            "Office": {"Paris":1},
+        }];
+
+        //Example data, Array
+        var stringArray = ["New York", "Berlin", "Paris", "Marrakech", "Moscow"];
+
+        //Example data, nested Object. This data will create nested table also.
+        var nestedTable = [{
+            key1: "val1",
+            key2: "val2",
+            key3: {
+                tableId: "tblIdNested1",
+                tableClassName: "clsNested",
+                linkText: "Download",
+                data: [{
+                    subkey1: "subval1",
+                    subkey2: "subval2",
+                    subkey3: "subval3"
+                }]
+            },
+            key4:[
+                "New York", "Berlin", "Paris", "Marrakech", "Moscow"
+            ]
+        },{
+            key1: "val1",
+            key2: "val2",
+            key3: {
+                tableId: "tblIdNested1",
+                tableClassName: "clsNested",
+                linkText: "Download",
+                data: [{
+                    subkey1: "subval1",
+                    subkey2: "subval2",
+                    subkey3: "subval3"
+                }]
+            },
+            key4:[
+                "New York", "Berlin", "Paris", "Marrakech", "Moscow"
+            ]
+        }];
+
+        //Only first parameter is required
+        window.onload = function () {
+//            document.getElementById("t").innerHTML = ConvertJsonToTable(nestedTable, 'jsonTable', null, 'Download');
+//            document.getElementById("t").innerHTML += ArrayToHTML("haha", stringArray);
+////            document.getElementById("t").innerHTML += ArrayToHTML(null, stringArray);
+//            document.getElementById("t").innerHTML += ArrayToHTML("object", objectItem);
+            document.getElementById("t").innerHTML += ObjectToHTML(null, nestedTable);
+        }
+    </script>
+</head>
+<body >
+    <table border="1" cellpadding="1" cellspacing="1"  id="t" width = "100%">
+    </table>
+</body>
+</html>
